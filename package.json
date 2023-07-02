@@ -1,0 +1,15 @@
+{
+  "name": "polling-system-api",
+  "version": "1.0.0",
+  "description": "A Simple Polling System API using Node js and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashis (WebGuyAshis)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1"
+  }
+}
