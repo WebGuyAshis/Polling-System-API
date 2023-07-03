@@ -3,6 +3,9 @@ const app = express();
 
 const mongoose = require('mongoose');
 
+
+app.use('/', require('./routes/api/v1'))
+
 app.listen(8000, (err)=>{
     if(err){
         console.log("Error Connecting to Server!");
