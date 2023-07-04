@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
+const db = require('./config/mongoose');
 
-const mongoose = require('mongoose');
-
+app.use(express.urlencoded());
 
 app.use('/', require('./routes/api/v1'))
 
