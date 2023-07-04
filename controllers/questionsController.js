@@ -44,4 +44,26 @@ module.exports.create = (req,res)=>{
     })
 }
 
+// Delete Question
+module.exports.delete = (req, res) => {
+    console.log("Delete Question!");
+    const questionId = req.params.questionId;
+    console.log("Question ID =", questionId);
+  
+    Questions.findByIdAndDelete(questionId)
+      .then(question => {
+        if (question) {
+          console.log("Successfully Deleted Question!");
+          res.status(200).json({ message: "Successfully Deleted Question!", questionId });
+        } else {
+          console.log("Error Deleting Question!");
+          res.status(404).json({ message: "Error Deleting Question!", questionId });
+        }
+      })
+      .catch(err => {
+        console.log("Internal Server Error!", err);
+        res.status(500).json({ message: "Internal Server Error" });
+      });
+  };
+  
 
