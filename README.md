@@ -15,10 +15,15 @@ A Polling System API using NOde JS and MongoDB have Multiple Features
 # Routes:
 
 POST /questions/create: Create a new question.
+
 POST /questions/:id/options/create: Add options to a specific question.
+
 GET /questions/:id: Delete a question (optional: if no votes are associated with any option).
+
 GET /options/:id: Delete an option (optional: if it has no votes).
+
 POST /options/:id/add_vote: Increment the vote count for a specific option.
+
 GET /questions/:id: View a question and its options, including the votes given to each option.
 
 # How to Setup
