@@ -30,7 +30,7 @@ GET /questions/:id: View a question and its options, including the votes given t
 
 Download the Zip file and Extract it.
 
-Open it with Node JS, and open Terminal and run command "npm start". Project will start at :
+Open it with VS Code EDitor , and open Terminal and run command "npm start". Project will start at :
 http://127.0.0.1:8000/api/v1/ ......
 
 Now Open Postman and Enjoy the Features!
