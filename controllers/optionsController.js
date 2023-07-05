@@ -43,10 +43,10 @@ module.exports.create = (req, res) => {
     Options.findById(optionId)
         .then(option=>{
             if(option){
-                console.log("votes: ",option.votes);
+                // console.log("votes: ",option.votes);
                 option.votes = option.votes + 1;
                 option.save();
-                console.log("votes: ",option.votes);
+                // console.log("votes: ",option.votes);
                 res.status(200).json({message: "Successfully Added Vote!"})
 
             }
