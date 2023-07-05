@@ -1,25 +1,22 @@
 const Questions = require('../models/Questions');
-
+// Viewing Question
 module.exports.question = (req, res) => {
-
-  console.log("View Question!");
-  const questionId = req.params.questionId;
-  console.log("Question ID =", questionId);
-  Questions.findById(questionId)
-    .then(question => {
-      if (question) {
-        console.log("Question Found!");
-        res.status(200).json(question);
-      } else {
-        console.log("Question Not Found!");
-        res.status(404).json({ message: "Question Not Found!" });
-      }
-    })
-    .catch(err => {
-      console.log("Error finding Question!", err);
-      res.status(500).json({ message: "Internal Server Error" });
-    });
-};
+    const questionId = req.params.questionId;
+    Questions.findById(questionId)
+      .populate("options")
+      .then(question => {
+        if (question) {
+          res.status(200).json(question);
+        } else {
+          res.status(404).json({ message: "Question Not Found!" });
+        }
+      })
+      .catch(err => {
+        console.log("Error finding Question!", err);
+        res.status(500).json({ message: "Internal Server Error" });
+      });
+  };
+  
 
 
 // Creating Questions
@@ -45,25 +42,21 @@ module.exports.create = (req,res)=>{
 }
 
 // Delete Question
-module.exports.delete = (req, res) => {
-    console.log("Delete Question!");
+module.exports.delete = (req,res)=>{
     const questionId = req.params.questionId;
-    console.log("Question ID =", questionId);
-  
     Questions.findByIdAndDelete(questionId)
-      .then(question => {
-        if (question) {
-          console.log("Successfully Deleted Question!");
-          res.status(200).json({ message: "Successfully Deleted Question!", questionId });
-        } else {
-          console.log("Error Deleting Question!");
-          res.status(404).json({ message: "Error Deleting Question!", questionId });
-        }
-      })
-      .catch(err => {
-        console.log("Internal Server Error!", err);
-        res.status(500).json({ message: "Internal Server Error" });
-      });
-  };
-  
+        .then(question=>{
+            if(question){
+            res.status(200).json({message: "Successfully Deleted Question!! ", questionId})
+            }
+            else{
+            res.status(404).json({message: "Error Deleting Question!! ", questionId})
+
+            }
+        })
+        .catch(err=>{
+            console.log("Internal Server Error!", err);
+            res.status(500).json({message: "Internal Server Error"})
+        })
+}
 
