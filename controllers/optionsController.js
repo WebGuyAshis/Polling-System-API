@@ -4,12 +4,12 @@ const Questions = require("../models/Questions");
 // Create Option
 module.exports.create = (req, res) => {
     const questionId = req.params.questionId;
-    Options.create({ text: req.body.text })
+    Options.create({ text: req.body.option })
       .then((option) => {
         if (option) {
           console.log("Successfully Created Option!!");
 
-          option.link_to_vote = `http://127.0.0.1:8000/options/${option._id}/add_vote`;
+          option.link_to_vote = `http://127.0.0.1:8000/api/v1/options/${option._id}/add_vote`;
           option.save()
   
           Questions.findById(questionId)

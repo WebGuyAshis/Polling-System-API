@@ -23,7 +23,7 @@ module.exports.question = (req, res) => {
 module.exports.create = (req,res)=>{
     console.log("Create Question!");
     Questions.create({
-        question: req.body.title
+        question: req.body.question
     })
     .then(question=>{
         if(question){
