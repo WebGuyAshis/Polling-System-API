@@ -14,7 +14,7 @@ A Polling System API using NOde JS and MongoDB have Multiple Features
 
 # Routes:
 
-POST /questions/create: Create a new question.
+POST /questions/create  Create a new question.
 Key: question,
 Value: "Your Question"
 
