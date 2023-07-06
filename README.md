@@ -31,10 +31,11 @@ Download ZIP File and Extrat It.
 Open it with VS COde
 Set UP your own mongoose cluster.
 Open Terminal and Type "npm install"
-and Then Type "npm start" which will run the project
-Hosted Link: https://polling-system-api-x3h9.onrender.com/
+and Then Type "npm start" which will run the project.
 
-To test, https://polling-system-api-x3h9.onrender.com/api/v1/{related routes}
+# Hosted Link: https://polling-system-api-x3h9.onrender.com/
+
+To test, https://polling-system-api-x3h9.onrender.com/api/v1/ {related routes}
 
 Now Open Postman and Enjoy the Features!
 
