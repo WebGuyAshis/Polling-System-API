@@ -15,11 +15,11 @@ A Polling System API using NOde JS and MongoDB have Multiple Features
 # Routes:
 
 POST /questions/create: Create a new question.
-Key: question
+Key: question,
 Value: "Your Question"
 
 POST /questions/:id/options/create  Add options to a specific question.
-Key: option
+Key: option,
 Value: "Your Option"
 
 GET /questions/:id/delete    Delete a question (if no votes are associated with any option).
